@@ -29,6 +29,18 @@ CROSS JOIN foot_items
 
 solution = duckdb.sql(answer).df()
 
+with st.sidebar:
+    option = st.selectbox(
+        "How would you like to review",
+        ("Joins", "GroupBy", "Windows Functions"),
+        index=None,
+        placeholder="Select a theme...",
+    )
+
+    st.write('You selected:', option)
+
+
+
 st.header("Entrer votre code: ")
 query = st.text_area(label="Votre code SQL ici", key="user_input")
 
